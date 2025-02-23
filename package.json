@@ -6,11 +6,19 @@
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev",
 		"start": "wrangler dev",
-		"cf-typegen": "wrangler types"
+		"cf-typegen": "wrangler types",
+		"build:discord": "tsc -p tsconfig.discord.json",
+		"start:discord": "node dist/index.js",
+		"dev:discord": "tsc -p tsconfig.discord.json --watch"
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20250214.0",
 		"typescript": "^5.5.2",
 		"wrangler": "^3.109.2"
+	},
+	"dependencies": {
+		"@types/ws": "^8.5.14",
+		"dotenv": "^16.4.7",
+		"ws": "^8.18.1"
 	}
 }
